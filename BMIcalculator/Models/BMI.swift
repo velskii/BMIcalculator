@@ -12,6 +12,7 @@ class BMI
     private var m_height: Double
     private var m_bmi: Double
     private var m_date: String
+    private var m_mode: String
     
     // public properties
     public var id: Int64
@@ -19,6 +20,13 @@ class BMI
         get
         {
             return m_id
+        }
+    }
+    public var mode: String
+    {
+        get
+        {
+            return m_mode
         }
     }
     public var name: String
@@ -33,7 +41,20 @@ class BMI
             m_name = newName
         }
     }
-    
+    public var age: Int
+    {
+        get
+        {
+            return m_age
+        }
+    }
+    public var gender: String
+    {
+        get
+        {
+            return m_gender
+        }
+    }
     public var weight: Double
     {
         get
@@ -104,7 +125,7 @@ class BMI
         }
         
         m_id = id
-        
+        m_mode = mode
     }
     
 

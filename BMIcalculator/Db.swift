@@ -87,6 +87,44 @@ class Db
         }
         return BMI()
     }
+    func getCount() -> Int{
+        do {
+            let db = try Connection(path)
+            return try db.scalar(tableResource.count) as Int
+        }catch {
+            print(error)
+        }
+        return 0
+    }
+    
+    func getLatestRow() -> BMI{
+        do {
+           
+            let db = try Connection(path)
+            let cc = try db.scalar(tableResource.count) as Int
+            if ( cc < 1)
+            {
+                return BMI()
+            }
+            let rowid = try db.scalar("select *from mapd714_bmi_calculator ORDER BY id DESC LIMIT 1;") as! Int64
+            for item in try db.prepare(tableResource) {
+                
+                if (item[id] == rowid) {
+                    
+                   return BMI(
+                        name: item[name]!,
+                        weight: item[weight]!,
+                        height: item[height]!,
+                        date: item[date]!
+                    )
+                }
+            }
+            
+        }catch {
+            print(error)
+        }
+        return BMI()
+    }
     
     func selectData() -> [BMI]{
         do {

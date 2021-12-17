@@ -123,13 +123,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1g9-Ml-7Ui">
-                                <rect key="frame" x="255" y="459" width="134" height="50"/>
+                                <rect key="frame" x="275" y="459" width="94" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Tracking">
+                                <buttonConfiguration key="configuration" style="tinted" title="Done">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="trackingBtn:" destination="ESb-wO-nXa" eventType="touchUpInside" id="BNB-KP-24R"/>
                                     <action selector="trackingBtn:" destination="enb-Fm-cEA" eventType="touchUpInside" id="uca-YM-nC9"/>
                                 </connections>
                             </button>
@@ -267,14 +268,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uD-8D-iEh">
-                                <rect key="frame" x="251" y="463" width="134" height="50"/>
+                                <rect key="frame" x="271" y="463" width="94" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Tracking">
+                                <buttonConfiguration key="configuration" style="tinted" title="Done">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="trackingBtn:" destination="enb-Fm-cEA" eventType="touchUpInside" id="8Dg-HA-c6N"/>
+                                    <action selector="trackingBtn:" destination="enb-Fm-cEA" eventType="touchUpInside" id="f31-lA-WLD"/>
                                 </connections>
                             </button>
                         </subviews>

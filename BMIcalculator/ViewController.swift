@@ -11,9 +11,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var data = Db.init().getLatestRow()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (data.mode == "Imperial")
+        {
+            nameText?.text = data.name
+            ageText?.text = String(data.age)
+            genderText?.text = data.gender
+            weightText?.text = String(data.weight)
+            heightText?.text = String(data.height)
+            scoreLabel?.text = String(data.bmi)
+            categoryLabel?.text = showCategory(score: data.bmi)
+            
+        } else {
+            nameMetric.text = data.name
+            ageMetric.text = String(data.age)
+            genderMetric.text = data.gender
+            weightInKilograms.text = String(data.weight)
+            heightInMeters.text = String(data.height)
+            BMI_metric.text = String(data.bmi)
+            category_metric.text = showCategory(score: data.bmi)
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -32,24 +53,31 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
-    
-    
-    
-    
     @IBAction func calculateBtn(_ sender: UIButton)
     {
-        let name = nameText.text!
+        let nameInput = nameText.text!
         let age = ageText.text!
         let gender = genderText.text!
         let weight: Double = Double(weightText.text!) ?? 0
         let height: Double = Double(heightText.text!) ?? 0
         
-        let BMI: Double = (weight * 703) / (height*height)
+//        let BMIvalue: Double = (weight * 703) / (height*height)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let bmiObj = BMI(
+            name: nameInput,
+            age: Int(age)!,
+            gender: gender,
+            weight: Double(weight),
+            height: Double(height),
+            date: dateFormatter.string(from: Date()),
+            mode: "Imperial"
+        )
+        Db.init().insertData(bmiObj: bmiObj)
         
-        scoreLabel.text = String(format: "%f", BMI)
-        categoryLabel.text = calculateCategory(score: BMI)
+        scoreLabel.text = String(format: "%f", bmiObj.bmi)
+        categoryLabel.text = showCategory(score: bmiObj.bmi)
     }
-    
     
     
     @IBOutlet weak var nameMetric: UITextField!
@@ -68,28 +96,33 @@ class ViewController: UIViewController {
     
     @IBAction func calculateBtn_metric(_ sender: UIButton)
     {
-        let name = nameMetric.text!
+        let nameInput = nameMetric.text!
         let age = ageMetric.text!
         let gender = genderMetric.text!
         let weight: Double = Double(weightInKilograms.text!) ?? 0
         let height: Double = Double(heightInMeters.text!) ?? 0
         
-        let BMI: Double = weight / (height*height)
+//        let BMI: Double = weight / (height*height)
         
-        BMI_metric.text = String(format: "%f", BMI)
-        category_metric.text = calculateCategory(score: BMI)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let bmiObj = BMI(
+            name: nameInput,
+            age: Int(age)!,
+            gender: gender,
+            weight: Double(weight),
+            height: Double(height),
+            date: dateFormatter.string(from: Date()),
+            mode: "Metric"
+        )
+        Db.init().insertData(bmiObj: bmiObj)
+        
+        BMI_metric.text = String(format: "%f", bmiObj.bmi)
+        category_metric.text = showCategory(score: bmiObj.bmi)
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    func calculateCategory(score: Double) -> String
+    func showCategory(score: Double) -> String
     {
         var category: String = ""
         

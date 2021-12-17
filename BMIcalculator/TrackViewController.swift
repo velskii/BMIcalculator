@@ -18,6 +18,15 @@ class TrackViewController: UITableViewController {
     let cellHeightForRow: CGFloat = 80
     
     override func viewDidLoad() {
+        if (self.data.count < 1)
+        {
+            let alert = UIAlertController(title: "No data", message: "You will be routed to the Personal Information Screen", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in
+                self.navigationController?.popViewController(animated: false)
+            }))
+            present(alert, animated: false)
+        }
+        
         super.viewDidLoad()
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: tableIdentifier)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBtn))
@@ -73,6 +82,16 @@ class TrackViewController: UITableViewController {
             self.data.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.reloadData()
+            
+            if (Db.init().getCount() < 1)
+            {
+                let alert = UIAlertController(title: "No data", message: "You will be routed to the Personal Information Screen", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in
+                    self.navigationController?.popViewController(animated: false)
+                }))
+                self.present(alert, animated: false)
+            }
+            
             success(true)
         })
         modifyAction.backgroundColor = .systemRed
