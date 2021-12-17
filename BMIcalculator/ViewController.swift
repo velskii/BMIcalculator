@@ -9,6 +9,9 @@
 
 import UIKit
 
+/**
+ The ui is designed with tab bar, so the user can toggle from imprial units to metric units.
+ */
 class ViewController: UIViewController {
 
     var data = Db.init().getLatestRow()
@@ -53,6 +56,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
+    // Imperial BMI calculate
     @IBAction func calculateBtn(_ sender: UIButton)
     {
         let nameInput = nameText.text!
@@ -94,6 +98,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var category_metric: UILabel!
     
+    // Metric BMI calculate
     @IBAction func calculateBtn_metric(_ sender: UIButton)
     {
         let nameInput = nameMetric.text!
