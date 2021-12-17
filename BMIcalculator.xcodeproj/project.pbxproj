@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4758546276CD4BF001BF914 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C4758545276CD4BF001BF914 /* SQLite */; };
+		C4758548276CD50E001BF914 /* Db.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4758547276CD50E001BF914 /* Db.swift */; };
+		C475854A276D0404001BF914 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4758549276D0404001BF914 /* TrackViewController.swift */; };
+		C475854C276D0B65001BF914 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475854B276D0B65001BF914 /* CustomTableViewCell.swift */; };
 		C4C3DE9D276BFAD500B3B891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3DE9C276BFAD500B3B891 /* AppDelegate.swift */; };
 		C4C3DE9F276BFAD500B3B891 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3DE9E276BFAD500B3B891 /* SceneDelegate.swift */; };
 		C4C3DEA1276BFAD500B3B891 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3DEA0276BFAD500B3B891 /* ViewController.swift */; };
 		C4C3DEA4276BFAD500B3B891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C3DEA2276BFAD500B3B891 /* Main.storyboard */; };
 		C4C3DEA6276BFADA00B3B891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C3DEA5276BFADA00B3B891 /* Assets.xcassets */; };
 		C4C3DEA9276BFADA00B3B891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C3DEA7276BFADA00B3B891 /* LaunchScreen.storyboard */; };
+		C4C3DEBC276C254B00B3B891 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3DEBB276C254B00B3B891 /* BMI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C4758547276CD50E001BF914 /* Db.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Db.swift; sourceTree = "<group>"; };
+		C4758549276D0404001BF914 /* TrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
+		C475854B276D0B65001BF914 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C4C3DE99276BFAD500B3B891 /* BMIcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMIcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C3DE9C276BFAD500B3B891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C3DE9E276BFAD500B3B891 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +32,7 @@
 		C4C3DEA5276BFADA00B3B891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4C3DEA8276BFADA00B3B891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4C3DEAA276BFADA00B3B891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4C3DEBB276C254B00B3B891 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4758546276CD4BF001BF914 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +66,27 @@
 		C4C3DE9B276BFAD500B3B891 /* BMIcalculator */ = {
 			isa = PBXGroup;
 			children = (
+				C4C3DEBA276C252700B3B891 /* Models */,
 				C4C3DE9C276BFAD500B3B891 /* AppDelegate.swift */,
+				C4758547276CD50E001BF914 /* Db.swift */,
 				C4C3DE9E276BFAD500B3B891 /* SceneDelegate.swift */,
 				C4C3DEA0276BFAD500B3B891 /* ViewController.swift */,
+				C4758549276D0404001BF914 /* TrackViewController.swift */,
+				C475854B276D0B65001BF914 /* CustomTableViewCell.swift */,
 				C4C3DEA2276BFAD500B3B891 /* Main.storyboard */,
 				C4C3DEA5276BFADA00B3B891 /* Assets.xcassets */,
 				C4C3DEA7276BFADA00B3B891 /* LaunchScreen.storyboard */,
 				C4C3DEAA276BFADA00B3B891 /* Info.plist */,
 			);
 			path = BMIcalculator;
+			sourceTree = "<group>";
+		};
+		C4C3DEBA276C252700B3B891 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4C3DEBB276C254B00B3B891 /* BMI.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +105,9 @@
 			dependencies = (
 			);
 			name = BMIcalculator;
+			packageProductDependencies = (
+				C4758545276CD4BF001BF914 /* SQLite */,
+			);
 			productName = BMIcalculator;
 			productReference = C4C3DE99276BFAD500B3B891 /* BMIcalculator.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +136,9 @@
 				Base,
 			);
 			mainGroup = C4C3DE90276BFAD400B3B891;
+			packageReferences = (
+				C4758544276CD4BF001BF914 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = C4C3DE9A276BFAD500B3B891 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C3DEBC276C254B00B3B891 /* BMI.swift in Sources */,
+				C475854C276D0B65001BF914 /* CustomTableViewCell.swift in Sources */,
+				C475854A276D0404001BF914 /* TrackViewController.swift in Sources */,
 				C4C3DEA1276BFAD500B3B891 /* ViewController.swift in Sources */,
 				C4C3DE9D276BFAD500B3B891 /* AppDelegate.swift in Sources */,
 				C4C3DE9F276BFAD500B3B891 /* SceneDelegate.swift in Sources */,
+				C4758548276CD50E001BF914 /* Db.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +390,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4758544276CD4BF001BF914 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.13.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4758545276CD4BF001BF914 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4758544276CD4BF001BF914 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C4C3DE91276BFAD400B3B891 /* Project object */;
 }

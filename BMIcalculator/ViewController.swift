@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -46,14 +48,6 @@ class ViewController: UIViewController {
         
         scoreLabel.text = String(format: "%f", BMI)
         categoryLabel.text = calculateCategory(score: BMI)
-        
-        
-        
-        
-//        let alert = UIAlertController(title: "Are you sure?", message: name, preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//            present(alert, animated: false)
     }
     
     
@@ -124,7 +118,13 @@ class ViewController: UIViewController {
     }
     
     
-
+    @IBAction func trackingBtn(_ sender: UIButton)
+    {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Track") as! TrackViewController
+        
+        navigationController?.pushViewController(vc, animated: false)
+    }
+    
 
 }
 
